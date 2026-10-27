@@ -24,6 +24,9 @@ Abra o arquivo `index.html` no navegador. Não precisa instalar nada.
 | `script.js` | Lógica (cadastrar, editar, excluir, buscar) |
 | `banco/banco.sql` | Script do banco de dados (SQLite): cria a tabela `livros` e dados de exemplo |
 | `banco/biblioteca.db` | Banco SQLite já pronto, gerado a partir do `banco.sql` |
+| `banco/inserts.sql` | INSERTs: mais 10 livros para a tabela `livros` |
+| `banco/selects.sql` | 17 SELECTs prontos (filtros, busca, ordenação, contagens e agrupamentos) |
+| `banco/listas-sql/biblioteca_seunome.sql` | Listas de SQL da disciplina (Listas 1 a 5 e desafio), em sintaxe MySQL |
 
 ## Banco de dados
 
@@ -43,6 +46,13 @@ Para recriar o banco do zero:
 
 ```bash
 sqlite3 banco/biblioteca.db < banco/banco.sql
+```
+
+Para adicionar mais livros e rodar as consultas:
+
+```bash
+sqlite3 banco/biblioteca.db < banco/inserts.sql
+sqlite3 -header -column banco/biblioteca.db < banco/selects.sql
 ```
 
 No final do `banco.sql` estão os comandos de cadastrar, editar, excluir, listar e buscar.
